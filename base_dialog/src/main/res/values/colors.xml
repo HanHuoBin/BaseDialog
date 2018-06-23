@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="dialog_action_color">#ff5800</color>
+    <color name="dialog_black">#000000</color>
+    <color name="dialog_gray_text">#333333</color>
+    <color name="dialog_white">#ffffff</color>
+    <!--dialog 取消颜色-->
+    <color name="dialog_cancel">#7e7e7e</color>
+    <color name="dialog_gray_bg">#dddddd</color>
+</resources>

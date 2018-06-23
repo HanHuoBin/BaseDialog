@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="dialog.hb.com.basedialog.MainActivity">
+
+    <Button
+        android:id="@+id/action_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ActionSheetDialog" />
+
+    <Button
+        android:id="@+id/alert_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MyAlertDialog"
+        app:layout_constraintTop_toBottomOf="@+id/action_dialog" />
+
+    <Button
+        android:id="@+id/alert_input_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MyAlertInputDialog"
+        app:layout_constraintTop_toBottomOf="@+id/alert_dialog" />
+
+
+    <Button
+        android:id="@+id/image_msg_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MyImageMsgDialog"
+        app:layout_constraintTop_toBottomOf="@+id/alert_input_dialog" />
+
+</android.support.constraint.ConstraintLayout>

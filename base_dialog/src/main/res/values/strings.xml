@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">base_dialog</string>
+    <string name="sure">确认</string>
+    <string name="device_connecting">设备连接中\n尽量使路由器、手机和设备相互靠近</string>
+    <string name="cancel">取消</string>
+    <string name="save">保存</string>
+    <string name="please_input_manager_password">请输入管理员密码</string>
+    <string name="title">标题</string>
+    <string name="contents">请输入内容</string>
+    <string name="confirm">确认</string>
+    <string name="prompt">提示</string>
+
+    <string name="default_color">默认</string>
+    <string name="red">红色</string>
+    <string name="yellow">黄色</string>
+    <string name="green">绿色</string>
+    <string name="blue">蓝色</string>
+    <string name="purple">紫色</string>
+    <string name="pink">粉色</string>
+    <string name="cyan">青色</string>
+    <string name="orange">橘色</string>
+</resources>
