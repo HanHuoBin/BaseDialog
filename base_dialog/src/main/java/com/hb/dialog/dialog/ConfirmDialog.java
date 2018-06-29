@@ -77,9 +77,9 @@ public class ConfirmDialog extends Dialog {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View layout = inflater.inflate(R.layout.dialog_confirm_layout, null);
         setContentView(layout);
-        noticeImg = (ImageView) layout.findViewById(R.id.img_logo);
         View btnOk = layout.findViewById(R.id.btn_ok);
         View btnCancel = layout.findViewById(R.id.btn_cancel);
+        noticeImg = (ImageView) layout.findViewById(R.id.img_logo);
         tvMsg = (TextView) layout.findViewById(R.id.tv_msg);
 
         btnOk.setOnClickListener(new View.OnClickListener() {

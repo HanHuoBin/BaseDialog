@@ -37,14 +37,6 @@
         android:layout_height="wrap_content"
         android:text="ConfirmDialog" />
 
-
-    <Button
-        android:id="@+id/confirm_fragment_dialog"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ConfirmFragmentDialog" />
-
-
     <Button
         android:id="@+id/connecting_dialog"
         android:layout_width="match_parent"

@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.hb.dialog.dialog.ConfirmDialog;
-import com.hb.dialog.dialog.ConfirmFragmentDialog;
 import com.hb.dialog.dialog.ConnectingDialog;
 import com.hb.dialog.dialog.LoadingDialog;
 import com.hb.dialog.dialog.LoadingFragmentDialog;
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @OnClick({R.id.action_dialog, R.id.alert_dialog, R.id.alert_input_dialog, R.id.image_msg_dialog,
-            R.id.confirm_dialog,R.id.confirm_fragment_dialog,R.id.connecting_dialog,
+            R.id.confirm_dialog,R.id.connecting_dialog,
             R.id.loading_dialog,R.id.loading_fragment_dialog})
     @Override
     public void onClick(View v) {
@@ -113,22 +112,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 });
                 confirmDialog.show();
-                break;
-            case R.id.confirm_fragment_dialog:
-                ConfirmFragmentDialog confirmFragmentDialog = new ConfirmFragmentDialog();
-                confirmFragmentDialog.setMessage("MSG");
-                confirmFragmentDialog.setClickListener(new ConfirmFragmentDialog.OnBtnClickListener() {
-                    @Override
-                    public void ok() {
-
-                    }
-
-                    @Override
-                    public void cancel() {
-
-                    }
-                });
-                confirmFragmentDialog.show(getSupportFragmentManager(),"11");
                 break;
             case R.id.connecting_dialog:
                 ConnectingDialog connectingDialog = new ConnectingDialog(this);
