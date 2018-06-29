@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="dialog.hb.com.basedialog.MainActivity">
+    android:orientation="vertical">
+
 
     <Button
         android:id="@+id/action_dialog"
@@ -16,22 +16,51 @@
         android:id="@+id/alert_dialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="MyAlertDialog"
-        app:layout_constraintTop_toBottomOf="@+id/action_dialog" />
+        android:text="MyAlertDialog" />
 
     <Button
         android:id="@+id/alert_input_dialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="MyAlertInputDialog"
-        app:layout_constraintTop_toBottomOf="@+id/alert_dialog" />
+        android:text="MyAlertInputDialog" />
 
 
     <Button
         android:id="@+id/image_msg_dialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="MyImageMsgDialog"
-        app:layout_constraintTop_toBottomOf="@+id/alert_input_dialog" />
+        android:text="MyImageMsgDialog" />
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/confirm_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ConfirmDialog" />
+
+
+    <Button
+        android:id="@+id/confirm_fragment_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ConfirmFragmentDialog" />
+
+
+    <Button
+        android:id="@+id/connecting_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ConnectingDialog" />
+
+    <Button
+        android:id="@+id/loading_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LoadingDialog" />
+
+    <Button
+        android:id="@+id/loading_fragment_dialog"
+        android:layout_width="match_parent"
+        android:text="LoadingFragmentDialog"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

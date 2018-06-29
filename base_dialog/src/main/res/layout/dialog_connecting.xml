@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/shape_white_corner">
+
+    <LinearLayout
+        android:padding="@dimen/dp_20"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/tv_msg"
+            tools:text="Apple_device_Bluetooth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <RelativeLayout
+            android:layout_marginTop="@dimen/dp_10"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_toLeftOf="@+id/iv_anim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="手机"/>
+
+            <TextView
+                android:layout_above="@+id/iv_anim"
+                android:layout_centerHorizontal="true"
+                android:text="连接中"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dp_10" />
+
+            <ImageView
+                android:layout_centerInParent="true"
+                android:id="@+id/iv_anim"
+                android:src="@drawable/anim_connecting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/iv_anim"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="text"/>
+
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
+
+</FrameLayout>
+

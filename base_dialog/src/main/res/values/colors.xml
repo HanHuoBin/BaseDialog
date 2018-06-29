@@ -5,7 +5,21 @@
     <color name="dialog_black">#000000</color>
     <color name="dialog_gray_text">#333333</color>
     <color name="dialog_white">#ffffff</color>
+    <color name="dialog_press_normal">#F6F6F6</color>
+    <color name="dialog_pressed">#E0E0E0</color>
     <!--dialog 取消颜色-->
     <color name="dialog_cancel">#7e7e7e</color>
     <color name="dialog_gray_bg">#dddddd</color>
+    <color name="dialog_gray">#808080</color>
+
+    <color name="dialog_confirm_btn_bg_color">#fdf3e8</color>
+    <!-- 确认框按钮按下背景色-->
+    <color name="dialog_confirm_btn_bg_pressed_color">#66fdf3e8</color>
+    <!-- 按钮灰色文字禁用色-->
+    <color name="btn_text_disable_color">#66808080</color>
+
+    <color name="alertdialog_line">#c6c6c6</color>
+    <color name="actionsheet_blue">#037BFF</color>
+    <color name="actionsheet_red">#FD4A2E</color>
+    <color name="actionsheet_gray">#8F8F8F</color>
 </resources>

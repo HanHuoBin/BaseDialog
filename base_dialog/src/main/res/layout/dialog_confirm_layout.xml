@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="@dimen/dialog_width"
+              android:layout_height="@dimen/dialog_height"
+              android:minWidth="@dimen/dialog_width"
+              android:minHeight="@dimen/dialog_height"
+              android:background="@drawable/dialog_confirm_bg_shape"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/img_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:src="@mipmap/dialog_notice"/>
+
+        <TextView
+            android:id="@+id/tv_msg"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/comment_textSize"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+        <TextView
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_left_btn_confirm"
+            android:gravity="center"
+            android:text="@string/cancel"
+            android:textColor="@color/dialog_gray"
+            android:textSize="@dimen/comment_textSize"/>
+
+        <TextView
+            android:id="@+id/btn_ok"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/selector_right_btn_confirm"
+            android:gravity="center"
+            android:text="@string/sure"
+            android:textColor="@color/dialog_gray"
+            android:textSize="@dimen/comment_textSize"/>
+    </LinearLayout>
+
+</LinearLayout>
