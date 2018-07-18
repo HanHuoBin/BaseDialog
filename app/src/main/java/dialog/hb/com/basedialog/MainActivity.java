@@ -17,13 +17,15 @@ import com.hb.dialog.myDialog.ActionSheetDialog;
 import com.hb.dialog.myDialog.MyAlertDialog;
 import com.hb.dialog.myDialog.MyAlertInputDialog;
 import com.hb.dialog.myDialog.MyImageMsgDialog;
+import com.hb.dialog.myDialog.MyPayInputDialog;
+import com.hb.dialog.myDialog.MyPwdInputDialog;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private AnimationDrawable           connectAnimation;
+    private AnimationDrawable connectAnimation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +35,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @OnClick({R.id.action_dialog, R.id.alert_dialog, R.id.alert_input_dialog, R.id.image_msg_dialog,
-            R.id.confirm_dialog,R.id.connecting_dialog,
-            R.id.loading_dialog,R.id.loading_fragment_dialog})
+            R.id.confirm_dialog, R.id.connecting_dialog,
+            R.id.loading_dialog, R.id.loading_fragment_dialog,
+            R.id.pwd_dialog, R.id.pay_dialog})
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -54,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 dialog.show();
                 break;
             case R.id.alert_dialog:
-                MyAlertDialog myAlertDialog = new MyAlertDialog(this).builder()
+                final MyAlertDialog myAlertDialog = new MyAlertDialog(this).builder()
                         .setTitle("确认吗？")
                         .setMsg("删除内容")
                         .setPositiveButton("确认", new View.OnClickListener() {
@@ -71,18 +74,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 myAlertDialog.show();
                 break;
             case R.id.alert_input_dialog:
-                MyAlertInputDialog myAlertInputDialog = new MyAlertInputDialog(this).builder()
+                final MyAlertInputDialog myAlertInputDialog = new MyAlertInputDialog(this).builder()
                         .setTitle("请输入")
-                        .setEditText("")
-                        .setPositiveButton("确认", new View.OnClickListener() {
+                        .setEditText("");
+                        myAlertInputDialog.setPositiveButton("确认", new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                showMsg("确认");
+                                showMsg(myAlertInputDialog.getResult());
+                                myAlertInputDialog.dismiss();
                             }
                         }).setNegativeButton("取消", new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
                                 showMsg("取消");
+                                myAlertInputDialog.dismiss();
                             }
                         });
                 myAlertInputDialog.show();
@@ -138,7 +143,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.loading_fragment_dialog:
                 LoadingFragmentDialog loadingFragmentDialog = new LoadingFragmentDialog();
                 loadingFragmentDialog.setMessage("loading");
-                loadingFragmentDialog.show(getSupportFragmentManager(),"msg");
+                loadingFragmentDialog.show(getSupportFragmentManager(), "msg");
+                break;
+            case R.id.pwd_dialog:
+                final MyPwdInputDialog pwdDialog = new MyPwdInputDialog(this)
+                        .builder()
+                        .setTitle("请输入密码");
+                pwdDialog.setPasswordListener(new MyPwdInputDialog.OnPasswordResultListener() {
+                    @Override
+                    public void onPasswordResult(String password) {
+                        showMsg("您的输入结果：" + password);
+                        pwdDialog.dismiss();
+                    }
+                });
+                pwdDialog.show();
+                break;
+            case R.id.pay_dialog:
+                final MyPayInputDialog myPayInputDialog = new MyPayInputDialog(this).Builder();
+                myPayInputDialog.setResultListener(new MyPayInputDialog.ResultListener() {
+                    @Override
+                    public void onResult(String result) {
+                        showMsg("您的输入结果：" + result);
+                        myPayInputDialog.dismiss();
+                    }
+                }).setTitle("支付");
+                myPayInputDialog.show();
                 break;
         }
     }

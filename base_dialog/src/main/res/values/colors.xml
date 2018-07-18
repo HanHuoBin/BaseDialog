@@ -22,4 +22,11 @@
     <color name="actionsheet_blue">#037BFF</color>
     <color name="actionsheet_red">#FD4A2E</color>
     <color name="actionsheet_gray">#8F8F8F</color>
+    <color name="transparent">#00000000</color>
+    <color name="pressed_while">#D3D3D3</color>
+    <color name="line_grey">#d3d3d3</color>
+    <color name="text_middle_grey">#858585</color>
+    <color name="bg_grey">#f2f2f2</color>
+
+    <color name="text_dark_grey">#222222</color>
 </resources>

@@ -55,4 +55,16 @@
         android:text="LoadingFragmentDialog"
         android:layout_height="wrap_content"/>
 
+    <Button
+        android:id="@+id/pwd_dialog"
+        android:layout_width="match_parent"
+        android:text="InputPwdDialog"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/pay_dialog"
+        android:layout_width="match_parent"
+        android:text="PayDialog"
+        android:layout_height="wrap_content"/>
+
 </LinearLayout>

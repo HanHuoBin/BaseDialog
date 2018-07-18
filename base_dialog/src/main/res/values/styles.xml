@@ -24,4 +24,24 @@
         <item name="android:windowFrame">@null</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>
+
+    <!--通用dialog-->
+    <style name="CommonDialogStyle" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="line">
+        <item name="android:background">@color/line_grey</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:layout_marginLeft">14dp</item>
+    </style>
+
+    <!--密码输入键盘-->
+    <declare-styleable name="PasswordKeyboardView">
+        <attr name="pkvDeleteDrawable" format="reference" />
+        <attr name="pkvDeleteBackgroundColor" format="color|reference" />
+    </declare-styleable>
 </resources>
