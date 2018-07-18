@@ -19,7 +19,7 @@ allprojects {
 Step 2. Add the dependency
 ```
 dependencies {
-    implementation 'com.github.User:Repo:Tag'
+    implementation 'com.github.HanHuoBin:BaseDialog:1.2.0'
 }
 ```
 
