@@ -3,6 +3,7 @@ package dialog.hb.com.basedialog;
 import android.content.DialogInterface;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
@@ -97,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.image_msg_dialog:
                 MyImageMsgDialog myImageMsgDialog = new MyImageMsgDialog(this).builder()
-                        .setImageLogo(getResources().getDrawable(R.mipmap.ic_launcher))
+                        .setImageLogo(ContextCompat.getDrawable(this,R.mipmap.dialog_notice))
                         .setMsg("连接中...");
                 ImageView logoImg = myImageMsgDialog.getLogoImg();
                 logoImg.setImageResource(R.drawable.connect_animation);
