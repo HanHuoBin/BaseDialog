@@ -3,12 +3,12 @@ apply plugin: 'com.github.dcendents.android-maven'
 group='com.github.HanHuoBin'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 27
     buildToolsVersion '27.0.3'
 
     defaultConfig {
         minSdkVersion 15
-        targetSdkVersion 26
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
 
@@ -30,5 +30,5 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:26.+'
+    implementation 'com.android.support:appcompat-v7:27.+'
 }
