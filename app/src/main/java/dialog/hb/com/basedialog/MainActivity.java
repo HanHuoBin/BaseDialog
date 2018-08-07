@@ -37,10 +37,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @OnClick({R.id.action_dialog, R.id.alert_dialog, R.id.alert_input_dialog, R.id.image_msg_dialog,
             R.id.confirm_dialog, R.id.connecting_dialog,
             R.id.loading_dialog, R.id.loading_fragment_dialog,
-            R.id.pwd_dialog, R.id.pay_dialog})
+            R.id.pwd_dialog, R.id.pay_dialog,R.id.update_dialog})
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.update_dialog:
+
+                break;
             case R.id.action_dialog:
                 ActionSheetDialog dialog = new ActionSheetDialog(this).builder().setTitle("请选择")
                         .addSheetItem("相册", null, new ActionSheetDialog.OnSheetItemClickListener() {
@@ -103,17 +106,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 myImageMsgDialog.show();
                 break;
             case R.id.confirm_dialog:
-                ConfirmDialog confirmDialog = new ConfirmDialog(this);
+                final ConfirmDialog confirmDialog = new ConfirmDialog(this);
                 confirmDialog.setLogoImg(R.mipmap.dialog_notice).setMsg("提示");
-                confirmDialog.setClickListener(new ConfirmDialog.OnBtnClickListener() {
+                confirmDialog.setPositiveBtn(new View.OnClickListener() {
                     @Override
-                    public void ok() {
-
-                    }
-
-                    @Override
-                    public void cancel() {
-
+                    public void onClick(View v) {
+                        confirmDialog.dismiss();
                     }
                 });
                 confirmDialog.show();

@@ -43,6 +43,7 @@
             android:layout_weight="1"
             android:background="@drawable/selector_left_btn_confirm"
             android:gravity="center"
+            android:visibility="gone"
             android:text="@string/cancel"
             android:textColor="@color/dialog_gray"
             android:textSize="@dimen/comment_textSize"/>
@@ -51,8 +52,8 @@
             android:id="@+id/btn_ok"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="2dp"
             android:layout_weight="1"
+            android:visibility="gone"
             android:background="@drawable/selector_right_btn_confirm"
             android:gravity="center"
             android:text="@string/sure"

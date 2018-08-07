@@ -15,9 +15,10 @@ import com.hb.dialog.R;
 public class ConfirmDialog extends Dialog {
 
     private Context context;
-    private OnBtnClickListener listener;
     private ImageView noticeImg;
     private TextView tvMsg;
+    private TextView btnOk;
+    private TextView btnCancel;
 
     public interface OnBtnClickListener {
         public void ok();
@@ -36,52 +37,7 @@ public class ConfirmDialog extends Dialog {
      *
      * @param listener
      */
-    public void setClickListener(OnBtnClickListener listener) {
-        this.listener = listener;
-    }
-
-    /**
-     * 设置提示的logo
-     *
-     * @param logo
-     * @return
-     */
-    public ConfirmDialog setLogoImg(int logo) {
-        if (noticeImg == null) {
-            return this;
-        }
-        noticeImg.setVisibility(View.VISIBLE);
-        noticeImg.setImageDrawable(context.getResources().getDrawable(logo));
-        return this;
-    }
-
-    /**
-     * 设置提示语
-     *
-     * @param msg
-     * @return
-     */
-    public ConfirmDialog setMsg(String msg) {
-        if (tvMsg == null) {
-            return this;
-        }
-        tvMsg.setVisibility(View.VISIBLE);
-        tvMsg.setText(msg);
-        return this;
-    }
-
-    /**
-     * 初始化dialog
-     */
-    private void init() {
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View layout = inflater.inflate(R.layout.dialog_confirm_layout, null);
-        setContentView(layout);
-        View btnOk = layout.findViewById(R.id.btn_ok);
-        View btnCancel = layout.findViewById(R.id.btn_cancel);
-        noticeImg = (ImageView) layout.findViewById(R.id.img_logo);
-        tvMsg = (TextView) layout.findViewById(R.id.tv_msg);
-
+    public void setClickListener(final OnBtnClickListener listener) {
         btnOk.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -103,6 +59,86 @@ public class ConfirmDialog extends Dialog {
                 dismiss();
             }
         });
+    }
+
+    /**
+     * 设置提示的logo
+     *
+     * @param logo
+     * @return
+     */
+    public ConfirmDialog setLogoImg(int logo) {
+        if (noticeImg == null) {
+            return this;
+        }
+        noticeImg.setVisibility(View.VISIBLE);
+        noticeImg.setImageDrawable(context.getResources().getDrawable(logo));
+        return this;
+    }
+
+    /**
+     * 获取logo
+     *
+     * @return
+     */
+    public ImageView getLogoImg() {
+        return noticeImg;
+    }
+
+    /**
+     * 设置提示语
+     *
+     * @param msg
+     * @return
+     */
+    public ConfirmDialog setMsg(String msg) {
+        if (tvMsg == null) {
+            return this;
+        }
+        tvMsg.setVisibility(View.VISIBLE);
+        tvMsg.setText(msg);
+        return this;
+    }
+
+    /**
+     * 确定按钮
+     *
+     * @param listener
+     * @return
+     */
+    public ConfirmDialog setPositiveBtn(View.OnClickListener listener) {
+        if (btnOk != null) {
+            btnOk.setVisibility(View.VISIBLE);
+            btnOk.setOnClickListener(listener);
+        }
+        return this;
+    }
+
+    /**
+     * 取消按钮
+     *
+     * @param listener
+     * @return
+     */
+    public ConfirmDialog setNegativeBtn(View.OnClickListener listener) {
+        if (btnCancel != null) {
+            btnCancel.setVisibility(View.VISIBLE);
+            btnCancel.setOnClickListener(listener);
+        }
+        return this;
+    }
+
+    /**
+     * 初始化dialog
+     */
+    private void init() {
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View layout = inflater.inflate(R.layout.dialog_confirm_layout, null);
+        setContentView(layout);
+        btnOk = layout.findViewById(R.id.btn_ok);
+        btnCancel = layout.findViewById(R.id.btn_cancel);
+        noticeImg = (ImageView) layout.findViewById(R.id.img_logo);
+        tvMsg = (TextView) layout.findViewById(R.id.tv_msg);
     }
 
 }
