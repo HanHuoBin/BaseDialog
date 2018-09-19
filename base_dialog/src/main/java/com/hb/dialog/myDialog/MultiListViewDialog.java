@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.hb.dialog.R;
 import com.hb.dialog.widget.autoloadListView.AutoLoadListView;
+import com.hb.dialog.widget.autoloadListView.LoadingFooter;
 
 public class MultiListViewDialog {
 
@@ -81,6 +82,21 @@ public class MultiListViewDialog {
 
     public MultiListViewDialog setLoadNextListener(AutoLoadListView.OnLoadNextListener listener) {
         listView.setOnLoadNextListener(listener);
+        return this;
+    }
+
+    public AutoLoadListView getListView() {
+        return listView;
+    }
+
+    public MultiListViewDialog setListViewEndState() {
+        listView.setState(LoadingFooter.State.TheEnd);
+        return this;
+    }
+
+
+    public MultiListViewDialog setListViewLoading() {
+        listView.setState(LoadingFooter.State.Idle);
         return this;
     }
 
