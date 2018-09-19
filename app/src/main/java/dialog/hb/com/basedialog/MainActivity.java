@@ -7,6 +7,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -14,15 +15,22 @@ import com.hb.dialog.dialog.ConfirmDialog;
 import com.hb.dialog.dialog.ConnectingDialog;
 import com.hb.dialog.dialog.LoadingDialog;
 import com.hb.dialog.dialog.LoadingFragmentDialog;
+import com.hb.dialog.dialog.UpdateDialog;
 import com.hb.dialog.myDialog.ActionSheetDialog;
+import com.hb.dialog.myDialog.MultiListViewDialog;
 import com.hb.dialog.myDialog.MyAlertDialog;
 import com.hb.dialog.myDialog.MyAlertInputDialog;
 import com.hb.dialog.myDialog.MyImageMsgDialog;
 import com.hb.dialog.myDialog.MyPayInputDialog;
 import com.hb.dialog.myDialog.MyPwdInputDialog;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import dialog.hb.com.basedialog.adapter.CommonAdapter;
+import dialog.hb.com.basedialog.adapter.ViewHolder;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -38,12 +46,46 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @OnClick({R.id.action_dialog, R.id.alert_dialog, R.id.alert_input_dialog, R.id.image_msg_dialog,
             R.id.confirm_dialog, R.id.connecting_dialog,
             R.id.loading_dialog, R.id.loading_fragment_dialog,
-            R.id.pwd_dialog, R.id.pay_dialog,R.id.update_dialog})
+            R.id.pwd_dialog, R.id.pay_dialog, R.id.update_dialog, R.id.btn_muilt_list})
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.update_dialog:
+            case R.id.btn_muilt_list:
+                List<String> dataList = new ArrayList<>();
+                for (int i = 0; i < 10; i++) {
+                    dataList.add("item" + (i + 1));
+                }
+                MultiListViewDialog mulDialog = new MultiListViewDialog(this).builder().setAdapter(new CommonAdapter<String>(this,dataList,R.layout.item_list ) {
+                    @Override
+                    public void convert(ViewHolder helper, String item) {
+                            helper.setText(R.id.tv_name,item);
+                    }
+                }).setNegativeButton("", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
 
+                    }
+                }).setPostiveButton("", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                    }
+                }).setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                    }
+                });
+                mulDialog.show();
+                break;
+            case R.id.update_dialog:
+                UpdateDialog updateDialog = new UpdateDialog(this).builder().setCancelable(true).setMsg("1.连续登录失败两次，会出现验证码输入框\\n2.我的页面添加手动检测版本的功能\\n3.首页的升级，十分钟检测一次").setPositiveButton("升级", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                    }
+                });
+                updateDialog.show();
                 break;
             case R.id.action_dialog:
                 ActionSheetDialog dialog = new ActionSheetDialog(this).builder().setTitle("请选择")
@@ -81,24 +123,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 final MyAlertInputDialog myAlertInputDialog = new MyAlertInputDialog(this).builder()
                         .setTitle("请输入")
                         .setEditText("");
-                        myAlertInputDialog.setPositiveButton("确认", new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                showMsg(myAlertInputDialog.getResult());
-                                myAlertInputDialog.dismiss();
-                            }
-                        }).setNegativeButton("取消", new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                showMsg("取消");
-                                myAlertInputDialog.dismiss();
-                            }
-                        });
+                myAlertInputDialog.setPositiveButton("确认", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        showMsg(myAlertInputDialog.getResult());
+                        myAlertInputDialog.dismiss();
+                    }
+                }).setNegativeButton("取消", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        showMsg("取消");
+                        myAlertInputDialog.dismiss();
+                    }
+                });
                 myAlertInputDialog.show();
                 break;
             case R.id.image_msg_dialog:
                 MyImageMsgDialog myImageMsgDialog = new MyImageMsgDialog(this).builder()
-                        .setImageLogo(ContextCompat.getDrawable(this,R.mipmap.dialog_notice))
+                        .setImageLogo(ContextCompat.getDrawable(this, R.mipmap.dialog_notice))
                         .setMsg("连接中...");
                 ImageView logoImg = myImageMsgDialog.getLogoImg();
                 logoImg.setImageResource(R.drawable.connect_animation);

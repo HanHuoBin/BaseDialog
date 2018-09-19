@@ -7,6 +7,12 @@
 
 
     <Button
+        android:id="@+id/btn_muilt_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="列表" />
+
+    <Button
         android:id="@+id/action_dialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -29,4 +29,5 @@
     <color name="bg_grey">#f2f2f2</color>
 
     <color name="text_dark_grey">#222222</color>
+    <color name="text_blue">#16A085</color>
 </resources>
