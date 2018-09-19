@@ -54,7 +54,7 @@
 
     <View style="@style/line" />
 
-    <ListView
+    <com.hb.dialog.widget.autoloadListView.AutoLoadListView
         android:id="@+id/list_view"
         android:layout_width="match_parent"
         android:layout_height="200dp"

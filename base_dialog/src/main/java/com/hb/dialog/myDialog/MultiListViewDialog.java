@@ -10,17 +10,17 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.hb.dialog.R;
+import com.hb.dialog.widget.autoloadListView.AutoLoadListView;
 
 public class MultiListViewDialog {
 
     private Context context;
     private Dialog dialog;
     private Display display;
-    private ListView listView;
+    private AutoLoadListView listView;
     private TextView cancelTv, sureTv, titleTv;
 
     public MultiListViewDialog(Context context) {
@@ -40,7 +40,6 @@ public class MultiListViewDialog {
         cancelTv = view.findViewById(R.id.tv_cancel);
         sureTv = view.findViewById(R.id.tv_sure);
         titleTv = view.findViewById(R.id.tv_title);
-
         // 定义Dialog布局和参数
         dialog = new Dialog(context, R.style.ActionSheetDialogStyle);
         dialog.setContentView(view);
@@ -77,6 +76,11 @@ public class MultiListViewDialog {
                 dialog.dismiss();
             }
         });
+        return this;
+    }
+
+    public MultiListViewDialog setLoadNextListener(AutoLoadListView.OnLoadNextListener listener) {
+        listView.setOnLoadNextListener(listener);
         return this;
     }
 
