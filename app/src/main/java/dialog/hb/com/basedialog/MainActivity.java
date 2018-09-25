@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.update_dialog:
                 NoticeDialog noticeDialog = new NoticeDialog(this).builder()
-                        .setMsg("请输入正确内容");
+                        .setMsg("请输入正确内容请输入正确内容请输入正确内容");
                 noticeDialog.show();
 //                UpdateDialog updateDialog = new UpdateDialog(this).builder().setCancelable(true).setMsg("1.连续登录失败两次，会出现验证码输入框\\n2.我的页面添加手动检测版本的功能\\n3.首页的升级，十分钟检测一次").setPositiveButton("升级", new View.OnClickListener() {
 //                    @Override
