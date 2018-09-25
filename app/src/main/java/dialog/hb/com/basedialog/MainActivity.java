@@ -15,7 +15,7 @@ import com.hb.dialog.dialog.ConfirmDialog;
 import com.hb.dialog.dialog.ConnectingDialog;
 import com.hb.dialog.dialog.LoadingDialog;
 import com.hb.dialog.dialog.LoadingFragmentDialog;
-import com.hb.dialog.dialog.UpdateDialog;
+import com.hb.dialog.dialog.NoticeDialog;
 import com.hb.dialog.myDialog.ActionSheetDialog;
 import com.hb.dialog.myDialog.MultiListViewDialog;
 import com.hb.dialog.myDialog.MyAlertDialog;
@@ -55,10 +55,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 for (int i = 0; i < 10; i++) {
                     dataList.add("item" + (i + 1));
                 }
-                MultiListViewDialog mulDialog = new MultiListViewDialog(this).builder().setAdapter(new CommonAdapter<String>(this,dataList,R.layout.item_list ) {
+                MultiListViewDialog mulDialog = new MultiListViewDialog(this).builder().setAdapter(new CommonAdapter<String>(this, dataList, R.layout.item_list) {
                     @Override
                     public void convert(ViewHolder helper, String item) {
-                            helper.setText(R.id.tv_name,item);
+                        helper.setText(R.id.tv_name, item);
                     }
                 }).setNegativeButton("", new View.OnClickListener() {
                     @Override
@@ -79,13 +79,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mulDialog.show();
                 break;
             case R.id.update_dialog:
-                UpdateDialog updateDialog = new UpdateDialog(this).builder().setCancelable(true).setMsg("1.连续登录失败两次，会出现验证码输入框\\n2.我的页面添加手动检测版本的功能\\n3.首页的升级，十分钟检测一次").setPositiveButton("升级", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                    }
-                });
-                updateDialog.show();
+                NoticeDialog noticeDialog = new NoticeDialog(this).builder()
+                        .setMsg("请输入正确内容");
+                noticeDialog.show();
+//                UpdateDialog updateDialog = new UpdateDialog(this).builder().setCancelable(true).setMsg("1.连续登录失败两次，会出现验证码输入框\\n2.我的页面添加手动检测版本的功能\\n3.首页的升级，十分钟检测一次").setPositiveButton("升级", new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//
+//                    }
+//                });
+//                updateDialog.show();
                 break;
             case R.id.action_dialog:
                 ActionSheetDialog dialog = new ActionSheetDialog(this).builder().setTitle("请选择")

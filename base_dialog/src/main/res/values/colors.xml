@@ -30,4 +30,5 @@
 
     <color name="text_dark_grey">#222222</color>
     <color name="text_blue">#16A085</color>
+    <color name="notice_back">#2B2B2B</color>
 </resources>
