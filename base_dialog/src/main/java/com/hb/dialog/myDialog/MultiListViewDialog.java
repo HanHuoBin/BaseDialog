@@ -70,13 +70,7 @@ public class MultiListViewDialog {
         } else {
             cancelTv.setText(text);
         }
-        cancelTv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listener.onClick(v);
-                dialog.dismiss();
-            }
-        });
+        cancelTv.setOnClickListener(listener);
         return this;
     }
 
@@ -106,13 +100,7 @@ public class MultiListViewDialog {
         } else {
             sureTv.setText(text);
         }
-        sureTv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listener.onClick(v);
-                dialog.dismiss();
-            }
-        });
+        sureTv.setOnClickListener(listener);
         return this;
     }
 
