@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.hb.dialog.dialog.ConfirmDialog;
 import com.hb.dialog.dialog.ConnectingDialog;
+import com.hb.dialog.dialog.InputAndSelectDialog;
 import com.hb.dialog.dialog.LoadingDialog;
 import com.hb.dialog.dialog.LoadingFragmentDialog;
 import com.hb.dialog.dialog.NoticeDialog;
@@ -43,13 +44,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.action_dialog, R.id.alert_dialog, R.id.alert_input_dialog, R.id.image_msg_dialog,
+    @OnClick({R.id.btn_input_select,R.id.action_dialog, R.id.alert_dialog, R.id.alert_input_dialog, R.id.image_msg_dialog,
             R.id.confirm_dialog, R.id.connecting_dialog,
             R.id.loading_dialog, R.id.loading_fragment_dialog,
             R.id.pwd_dialog, R.id.pay_dialog, R.id.update_dialog, R.id.btn_muilt_list})
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.btn_input_select:
+                InputAndSelectDialog inputAndSelectDialog = new InputAndSelectDialog(this)
+                        .builder().setTitle("存为仪器套餐")
+                        .setRadioButtonText(new String[]{"个人","科室"})
+                        .setPositiveButton("存储",R.color.dialog_black, new InputAndSelectDialog.InputAndSelectListener() {
+                            @Override
+                            public void onSelected(String content, int index) {
+                                Toast.makeText(MainActivity.this,content+index,Toast.LENGTH_SHORT).show();
+                            }
+                        }).setNegativeButton("", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+
+                            }
+                        });
+                inputAndSelectDialog.show();
+                break;
             case R.id.btn_muilt_list:
                 List<String> dataList = new ArrayList<>();
                 for (int i = 0; i < 10; i++) {

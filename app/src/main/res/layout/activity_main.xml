@@ -7,6 +7,12 @@
 
 
     <Button
+        android:id="@+id/btn_input_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="输入and选择" />
+
+    <Button
         android:id="@+id/btn_muilt_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

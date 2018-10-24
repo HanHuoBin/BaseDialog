@@ -5,6 +5,9 @@
     <color name="dialog_black">#000000</color>
     <color name="dialog_gray_text">#333333</color>
     <color name="dialog_white">#ffffff</color>
+    <color name="dialog_white_20_alpha">#ccffffff</color>
+    <color name="gray_d9d9d9">#D9D9D9</color>
+    <color name="dialog_black_20_alpha">#cc000000</color>
     <color name="dialog_press_normal">#F6F6F6</color>
     <color name="dialog_pressed">#E0E0E0</color>
     <!--dialog 取消颜色-->

@@ -39,6 +39,12 @@
         <item name="android:layout_marginLeft">14dp</item>
     </style>
 
+    <style name="vertical_line">
+        <item name="android:background">@color/line_grey</item>
+        <item name="android:layout_width">1px</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
     <!--密码输入键盘-->
     <declare-styleable name="PasswordKeyboardView">
         <attr name="pkvDeleteDrawable" format="reference" />
