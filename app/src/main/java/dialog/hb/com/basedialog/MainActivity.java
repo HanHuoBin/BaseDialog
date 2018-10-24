@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btn_input_select:  
+            case R.id.btn_input_select:
                 InputAndSelectDialog inputAndSelectDialog = new InputAndSelectDialog(this)
                         .builder().setTitle("存为仪器套餐")
                         .setRadioButtonText(new String[]{"个人","科室"})
